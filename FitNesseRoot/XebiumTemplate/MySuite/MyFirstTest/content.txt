@@ -1,0 +1,20 @@
+!*> Değişgenler
+!define müşteriNo {77117}
+!define şifre {12121212}
+!define tümİşlemler {link=Tüm İşlemler}
+!define hesapAç {link=Hesap Aç}
+!define kıymetliMadenHesabı {xpath=(//div[contains(text(),'Kıymetli Maden Hesabı')])}
+!define kabul {css=div.label_check}
+!define ileri {name=BtnNext}
+!define kıymetliMadenTürüAltın {xpath=(//li[contains(text(),'Altın')])} 
+!define onay {name=BtnSave}
+!define tamam {name=BtnOK}
+*!
+
+| script |
+| Login ekranına git |
+| MüşteriNo|${müşteriNo}| ve şifre|${şifre}| girişi yap |
+| Güvenlik resmini doğrula |
+| Cep mesaj giriş |
+| Kıymetli maden altın hesabı aç|
+| Logout ol |

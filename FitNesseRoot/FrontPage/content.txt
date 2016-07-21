@@ -1,0 +1,15 @@
+[[!img http://files/images/logo.png][FrontPage]] 
+!1 iŞube Otomasyonu
+
+!3 Modüller
+!contents -R2 -g -p -f -h
+
+
+!***> Preset variables
+!path xebium-0.14-SNAPSHOT-jar-with-dependencies.jar
+!define TEST_SYSTEM {slim}
+!define BROWSER {chrome}
+!define PREP_İŞUBE {http://srvboaweb2:90}
+
+!pomFile pom.xml@runtime
+***!

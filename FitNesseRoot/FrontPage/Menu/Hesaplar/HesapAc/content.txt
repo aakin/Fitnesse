@@ -1,0 +1,12 @@
+!*> Değişkenler
+!define müşteriNo {77117}
+!define şifre {12121212}
+*!
+
+| script |
+| Login ekranına git |
+| MüşteriNo|${müşteriNo}| ve şifre|${şifre}| girişi yap |
+| Güvenlik resmini doğrula |
+| Cep mesaj giriş |
+| Kıymetli maden altın hesabı aç|
+| Logout ol |

@@ -1,0 +1,41 @@
+In the Scenario library the logical steps in the test case can be translated to Xebium statements. Normally this means splitting up the test recorded with Selenium IDE.
+
+| scenario | Login ekranına git |
+| ensure | do | open | on | /Login/InitialLogin |
+| ensure | do | verifyTextPresent | on | !-Bilgilerinizi Giriniz-! |
+
+| scenario | MüşteriNo|müşteriNo| ve şifre|şifre| girişi yap |
+| ensure | do | type | on | id=IntUserName | with | @müşteriNo |
+| ensure | do | type | on | id=Password | with | @şifre |
+| ensure | do | clickAndWait | on | id=btnSubmit |
+
+| scenario | Güvenlik resmini doğrula |
+| ensure | do | verifyTextPresent | on | !-Güvenlik resminizi doğrulayın.-! |
+| ensure | do | clickAndWait | on | name=DEVAM |
+
+| scenario | Cep mesaj giriş |
+| ensure | do | click | on | id=input-2 |
+| ensure | do | type | on | id=input-2 | with | 121212 |
+| ensure | do | clickAndWait | on | id=OtpLoginButton |
+
+| scenario | Tıkla | link |
+| ensure | do | waitForElementPresent | on | @link |
+| ensure | do | clickAndWait | on | @link |
+
+| scenario | Logout ol |
+| ensure | do | open | on | /Login/LogOut |
+
+| scenario | Kıymetli maden altın hesabı aç |
+| Tıkla | link=Tüm İşlemler |
+| Tıkla | link=Hesap Aç |
+| Tıkla | xpath=(//div[contains(text(),'Kıymetli Maden Hesabı')]) |
+| Tıkla | css=div.label_check |
+| Tıkla | name=BtnNext |
+| Tıkla | name=BtnNext |
+| Tıkla | name=BtnSave  |
+
+| scenario | Müşteri no |müşteriNo| sıfırla|
+| do | open | on | !-http://srvboaweb1:90/FakeLogin/CustomerReset-! |
+| ensure | do | type | on | id=CustomerId | with | @müşteriNo |
+| ensure | do | click | on | xpath=(//div[contains(text(),'Prep')]) |
+| ensure | do | clickAndWait | on | name=ButtonSubmit |

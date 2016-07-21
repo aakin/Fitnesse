@@ -1,0 +1,112 @@
+!*> Login
+| scenario | Login ekranına git |
+| ensure | do | open | on | /Login/InitialLogin |
+| ensure | do | verifyTextPresent | on | !-Bilgilerinizi Giriniz-! |
+
+| scenario | MüşteriNo|müşteriNo| ve şifre|şifre| girişi yap |
+| ensure | do | type | on | id=IntUserName | with | @müşteriNo |
+| ensure | do | type | on | id=Password | with | @şifre |
+| ensure | do | clickAndWait | on | id=btnSubmit |
+
+| scenario | Güvenlik resmini doğrula |
+| ensure | do | verifyTextPresent | on | !-Güvenlik resminizi doğrulayın.-! |
+| ensure | do | clickAndWait | on | name=DEVAM |
+
+| scenario | Cep mesaj giriş |
+| ensure | do | click | on | id=input-2 |
+| ensure | do | type | on | id=input-2 | with | 121212 |
+| ensure | do | clickAndWait | on | id=OtpLoginButton |
+
+| scenario | Tıkla | link |
+| ensure | do | waitForElementPresent | on | @link |
+| ensure | do | clickAndWait | on | @link |
+
+| scenario | Logout ol |
+| ensure | do | open | on | /Login/LogOut |
+*!
+
+!*> Hesaplar
+| scenario | Kıymetli maden altın hesabı aç |
+| Tıkla | link=Tüm İşlemler |
+| Tıkla | link=Hesap Aç |
+| Tıkla | xpath=(//div[contains(text(),'Kıymetli Maden Hesabı')]) |
+| Tıkla | css=div.label_check |
+| Tıkla | name=BtnNext |
+| Tıkla | name=BtnNext |
+| Tıkla | name=BtnSave  |
+
+| scenario | Hesap kapat |
+| Tıkla | link=Tüm İşlemler |
+| Tıkla | link=Hesap Kapat |
+| Tıkla | name=BtnNext |
+| Tıkla | name=BtnSave  |
+*!
+
+!*> Müşteri Sıfırlama
+| scenario | Müşteri no |müşteriNo| sıfırla|
+| do | open | on | !-http://srvboaweb1:89/FakeLogin/CustomerReset-! |
+| ensure | do | type | on | id=CustomerId | with | @müşteriNo |
+| ensure | do | click | on | xpath=(//div[contains(text(),'Prep')]) |
+| ensure | do | clickAndWait | on | name=ButtonSubmit |
+
+!**> Müşteri numaraları değişkenleri
+!define müşteriNo1 {77117}
+!define müşteriNo2 {517622}
+!define müşteriNo3 {8448708}
+!define müşteriNo4 {474020}
+!define müşteriNo5 {62750}
+!define müşteriNo6 {459898}
+!define müşteriNo7 {8108980}
+!define müşteriNo8 {155958}
+!define müşteriNo9 {154030}
+!define müşteriNo10 {8375363}
+!define müşteriNo11 {6113093}
+!define müşteriNo12 {8673662}
+!define müşteriNo13 {6702390}
+!define müşteriNo14 {6926368}
+!define müşteriNo15 {6978224}
+!define müşteriNo16 {8856099}
+!define müşteriNo17 {6200387}
+!define müşteriNo18 {8660340}
+!define müşteriNo19 {6978224}
+!define müşteriNo20 {860992}
+!define müşteriNo21 {625631}
+!define müşteriNo22 {6947446}
+!define müşteriNo23 {502980}
+!define müşteriNo24 {860992}
+!define müşteriNo25 {880690}
+!define müşteriNo26 {6169442}
+!define müşteriNo27 {285625}
+!define müşteriNo28 {8685889}
+**!
+
+| scenario | Müşterileri sıfırla|
+|Müşteri No	|${müşteriNo1}|	sıfırla|
+|Müşteri No	|${müşteriNo2}|	sıfırla|
+|Müşteri No	|${müşteriNo3}|	sıfırla|
+|Müşteri No	|${müşteriNo4}|	sıfırla|
+|Müşteri No	|${müşteriNo5}|	sıfırla|
+|Müşteri No	|${müşteriNo6}|	sıfırla|
+|Müşteri No	|${müşteriNo7}|	sıfırla|
+|Müşteri No	|${müşteriNo8}|	sıfırla|
+|Müşteri No	|${müşteriNo9}|	sıfırla|
+|Müşteri No	|${müşteriNo10}|	sıfırla|
+|Müşteri No	|${müşteriNo11}|	sıfırla|
+|Müşteri No	|${müşteriNo12}|	sıfırla|
+|Müşteri No	|${müşteriNo13}|	sıfırla|
+|Müşteri No	|${müşteriNo14}|	sıfırla|
+|Müşteri No	|${müşteriNo15}|	sıfırla|
+|Müşteri No	|${müşteriNo16}|	sıfırla|
+|Müşteri No	|${müşteriNo17}|	sıfırla|
+|Müşteri No	|${müşteriNo18}|	sıfırla|
+|Müşteri No	|${müşteriNo19}|	sıfırla|
+|Müşteri No	|${müşteriNo20}|	sıfırla|
+|Müşteri No	|${müşteriNo21}|	sıfırla|
+|Müşteri No	|${müşteriNo22}|	sıfırla|
+|Müşteri No	|${müşteriNo23}|	sıfırla|
+|Müşteri No	|${müşteriNo24}|	sıfırla|
+|Müşteri No	|${müşteriNo25}|	sıfırla|
+|Müşteri No	|${müşteriNo26}|	sıfırla|
+|Müşteri No	|${müşteriNo27}|	sıfırla|
+|Müşteri No	|${müşteriNo28}|	sıfırla|
+*!
