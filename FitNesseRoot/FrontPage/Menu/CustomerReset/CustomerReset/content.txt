@@ -1,4 +1,4 @@
-Bu bir test mesajı.
+Bu bir test mesajı. Git
 
 | script |
 |Müşterileri sıfırla|
