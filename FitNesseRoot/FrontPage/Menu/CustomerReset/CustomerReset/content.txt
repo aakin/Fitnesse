@@ -1,2 +1,4 @@
+Bu bir test mesajı
+
 | script |
 |Müşterileri sıfırla|
